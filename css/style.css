@@ -1,0 +1,118 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:700);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic,700italic);
+
+body {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.udc-logo {
+    width: auto;
+    height: auto;
+    overflow: hidden;
+}
+
+.logo-box {
+    margin: 15px;
+    overflow: hidden;
+}
+
+.udc-logo > .logo-box > img {
+    width: 22em;
+    position: relative;
+    animation: 5s logoin;
+    transition: 2s ease;
+}
+
+.reveal h1, .reveal h2, .reveal h3 {
+    margin-bottom: 0.6em;
+}
+
+.reveal dl {
+    display: inline-block;
+}
+
+.reveal dl > * {
+    text-align: left;
+    margin-left: 0em;
+}
+
+.reveal dl > dt {
+    display: list-item;
+    list-style-type: disc;
+    list-style-position: inside;
+}
+
+.reveal dl > dd {
+    display:: list-item;
+    list-style: none;
+    margin-left: 2em;
+    margin-bottom: 0.3em;
+}
+
+.reveal .slides section .fragment.highlight-current-bold {
+    opacity: 1;
+}
+
+.reveal .slides section .fragment.highlight-current-bold.current-fragment {
+    font-weight: bold;
+}
+
+
+@keyframes logoin {
+    from {left: -100%;}
+    to {left: 0px;}
+}
+
+footer {
+  -rw-rw-rw-     24371  19-May-2009  10:30:46  0203/03_Simbolo_logo_cor.png	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	text-align: center;
+	font-family: sans-serif;
+	color: #eeeeee;
+	display:table;
+	vertical-align: middle;
+	z-index: 40;
+}
+
+footer > * {
+	display:table-cell;
+	vertical-align: middle;
+}
+
+footer li {
+	list-style: none;
+}
+
+.reveal ul > li.inline {
+	display: inline;
+	margin-right: -5px;
+	margin-left: none;
+}
+.reveal ul > li.inline:first-child:before {
+    content: ""!important
+}
+
+.reveal ul > li.inline:before {
+    content: ", "
+}
+
+.reveal footer {
+	font-size: 0.8em;
+	position:relative;
+	bottom: -100px;
+}
+
+
+pre {
+    -moz-tab-size:    4;
+    -webkit-tab-size: 4;
+    -o-tab-size:      4;
+    -ms-tab-size:     4;
+    tab-size:         4;
+}
+
+.reveal pre code {
+  max-height: 500px;
+  overflow: visible;
+}
