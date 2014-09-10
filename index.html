@@ -1,105 +1,197 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Trusted Distributed Storage over Untrusted Peers</title>
-	<meta name="viewport" content="width=1024" />
-	<meta name="apple-mobile-web-app-capable" content="yes" />
-	<meta charset="utf-8" />
-	<meta name="Author" content="Pablo Castro &amp; Santiago Saavedra" />
-	<link href='http://fonts.googleapis.com/css?family=Gabriela|Sintony:700,400' rel='stylesheet' type='text/css'>
+  <head>
+    <title>Trusted Distributed Storage over Untrusted Peers</title>
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta charset="utf-8" />
+    <meta name="Author" content="Pablo Castro &amp; Santiago Saavedra" />
+    <link href='http://fonts.googleapis.com/css?family=Gabriela|Sintony:700,400' rel='stylesheet' type='text/css'>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="reveal.js/css/reveal.min.css" />
+    <link rel="stylesheet" href="reveal.js/css/theme/simple.css" id="theme" />
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="reveal.js/lib/css/zenburn.css" />
+    <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+    <script>
+     document.write( '<link rel="stylesheet" href="reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+    </script>
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="udc-logo">
+      <div class="logo-box">
+	<img src="img/udc.png" />
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="slides">
+	<section id="portada">
+          <h1>TDSOUP</h1>
+          <h2>Santiago Saavedra López</h2>
+          <h3>&nbsp;</h3>
+          <ul>
+            <li class="inline">Trustable</li>
+            <li class="inline fragment">Distributed</li>
+            <li class="inline fragment">Storage</li>
+            <li class="inline fragment">Untrusted</li>
+            <li class="inline fragment">Peers</li>
+          </ul>
+	</section>
+	<section>
+          <h2>Problema</h2>
+          <p><strong>Compartir contenido</strong></p>
+          <ul>
+            <li>Confiable</li>
+            <li>Auténtico</li>
+            <li>Actualizable</li>
+            <li>Descentralizado</li>
+          </ul>
+	</section>
+	<section>
+          <h2>Panorama actual</h2>
+	  <p>Dropbox, git, syncthing, bittorrent, google drive</p>
+	</section>
 
-	<meta name="apple-mobile-web-app-capable" content="yes" />
-	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<section>
 
-	<link rel="stylesheet" href="reveal.js/css/reveal.min.css" />
-	<link rel="stylesheet" href="css/style.css" id="theme" />
+	  <section>
+	    <h2>Nuestra propuesta</h2>
+            <ul>
+              <li>Almacenamiento</li>
+              <li>Distribuido</li>
+              <li>sobre pares no confiables</li>
+            </ul>
+	  </section>
+	  <section>
+	    <h2>¿Qué planteamos?</h2>
+	    <ul>
+	      <li>Librería para aplicaciones finales</li>
+	      <li>Responsabilidad única</li>
+	      <li>Identidades</li>
+	    </ul>
+	  </section>
+	</section>
 
-	<!-- For syntax highlighting -->
-	<link rel="stylesheet" href="reveal.js/lib/css/zenburn.css" />
+	<section>
+	  <section>
+	    <h2>Almacenamiento distribuido</h2>
+	    <dl>
+	      <dt>¿Por qué?</dt>
+	      <dd class="fragment">No se necesita confianza en terceros</dd>
+	      <dt>¿Cómo?</dt>
+	    <dd class="fragment">Sistemas probados: DHT.</dd>
+	    </dl>
+	  </section>
+	  <section>
+	    <h2>¿Qué es una DHT?</h2>
+	    <p>Me meto en esto en la presentación?</p>
+	  </section>
+	</section>
 
-	<!-- If the query includes 'print-pdf', use the PDF print sheet -->
-	<script>
-		document.write( '<link rel="stylesheet" href="reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
-	</script>
+	<section>
+	  <h2>Confiable</h2>
+	  <ul>
+	    <li>Firmas digitales en cada transacción</li>
+	    <li>Cada versión es inmutable</li>
+	  </ul>
+	</section>
 
-	<!--[if lt IE 9]>
-	<script src="lib/js/html5shiv.js"></script>
-	<![endif]-->
-</head>
+	<section>
+	  <section>
+	    <h2>Modelo de datos robusto</h2>
+	    <ul>
+	      <li>Sin pérdida de información</li>
+	      <li>Cada versión nueva se identifica inequívocamente</li>
+	      <li>Árbol de versiones</li>
+	    </ul>
+	  </section>
+	  <section>
+	    <p>Diagrama de [permanode] <-- [claim] --> [content] </p>
+	  </section>
+	</section>
 
+	<section>
+	  <h2>Arquitectura</h2>
+	  <ul>
+	    <li class="fragment grow">Capa de distribución<span class="fragment">: KadOH</span></li>
+	    <li class="fragment grow">Capa de persistencia<span class="fragment">: CouchDB</span></li>
+	    <li class="fragment grow">API HTTP</li>
+	    <li class="fragment shrink">Sistema de plugins</li>
+	    <li class="fragment shrink">Sistema de aplicaciones incrustadas</li>
+	    <li class="fragment grow">Aplicaciones incrustadas</li>
+	  </ul>
+	</section>
 
-</head>
-<body>
-	<div class="reveal">
-		<div class="slides">
+	<section>
+	  <section>
+	    <h2>Como prueba de concepto...</h2>
+	    <p class="fragment">... construimos <em>wikita</em>.</p>
+	  </section>
 
-		<section id="portada">
-			<h1><em>TDSOUP</em>.</h1>
-		</section>
-
-		</div>
-	</div>
-
-<footer class="authors">
-	<div style="float:right;text-align:left; margin-right: 0">
+	  <section>
+	    <h2>Wikita es</h2>
+	    <p class="fragment highlight-current-bold">Una wiki distribuida con múlitples versiones y búsqueda por título.</p>
+	    <p class="fragment highlight-current-bold">Se pueden ver versiones anteriores</p>
+	    <p class="fragment highlight-current-bold">Varias versiones a partir de una</p>
+	    <p class="fragment highlight-current-bold">Páginas de desambiguación autogeneradas</p>
+	</section>
+      </div>
+    </div>
+    <footer class="authors">
+      <div style="float:right;text-align:left; margin-right: 0">
 	<ul>
-		<li>Santiago Saavedra López <a class="udc_cuenta" href="mailto:santiago.saavedral@udc.es">(santiago.saavedral@udc.es)</a></li>
+          <li>Santiago Saavedra López <a class="udc_cuenta" href="mailto:santiago.saavedral@udc.es">(santiago.saavedral@udc.es)</a></li>
 	</ul>
-	</div>
-</footer>
-
-	<script src="reveal.js/lib/js/head.min.js"></script>
-	<script src="reveal.js/js/reveal.min.js"></script>
-
-	<script>
-
-		window.addEventListener('load', function() {
-		var s = document.getElementsByClassName('demo');
-		console.log(s)
-		s = Array.prototype.slice.call(s, 0);
-		s.forEach(function(obj) {
-			var e = document.createElement('div');
-			e.className = "fragment demo-fragment"
-			e.innerHTML = "DEMO"
-			console.log(obj)
-			obj.appendChild(e)
-		})}, false);
-
-		// Full list of configuration options available here:
-		// https://github.com/hakimel/reveal.js#configuration
-		Reveal.initialize({
-			controls: false,
-			progress: true,
-			history: true,
-			center: true,
-
-			width: 800,
-			height: 600,
-			margin: 0.05,
-			minScale: 0.5,
-			maxScale: 1,
-
-			theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-			transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
-
-			// Optional libraries used to extend on reveal.js
-			dependencies: [
-				{ src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-				{ src: 'reveal.js/plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-				{ src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-				{ src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-				{ src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-				{ src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
-				{ src: '/socket.io/socket.io.js', async: true },
-				{ src: 'notes-server/client.js', async: true },
-				// { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
-				// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
-		]
-		});
-
-	</script>
-
-</body>
+      </div>
+    </footer>
+    <script src="reveal.js/lib/js/head.min.js"></script>
+    <script src="reveal.js/js/reveal.min.js"></script>
+    <script>
+     window.addEventListener('load', function() {
+       var s = document.getElementsByClassName('demo');
+       console.log(s)
+       s = Array.prototype.slice.call(s, 0);
+       s.forEach(function(obj) {
+         var e = document.createElement('div');
+         e.className = "fragment demo-fragment"
+         e.innerHTML = "DEMO"
+         console.log(obj)
+         obj.appendChild(e)
+       })}, false);
+     // Full list of configuration options available here:
+     // https://github.com/hakimel/reveal.js#configuration
+     Reveal.initialize({
+       controls: false,
+       progress: true,
+       history: true,
+       center: true,
+       width: 1000,
+       height: 700,
+       margin: 0.05,
+       minScale: 0.5,
+       maxScale: 1,
+       theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+       transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+       // Optional libraries used to extend on reveal.js
+       dependencies: [
+         { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+         { src: 'reveal.js/plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+         { src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+         { src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+         { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+         { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+         { src: '/socket.io/socket.io.js', async: true },
+         { src: 'notes-server/client.js', async: true },
+         // { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+         // { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+       ]
+     });
+    </script>
+  </body>
 </html>
-
