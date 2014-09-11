@@ -6,6 +6,7 @@ body {
 }
 
 .udc-logo {
+    left: 0;
     width: auto;
     height: auto;
     overflow: hidden;
@@ -16,11 +17,29 @@ body {
     overflow: hidden;
 }
 
+.udc-logo.hide > .logo-box > img {
+    left: -100%;
+}
+
 .udc-logo > .logo-box > img {
     width: 22em;
     position: relative;
-    animation: 5s logoin;
-    transition: 2s ease;
+    transition: 3s ease;
+    left: 0;
+}
+
+.logo-portada {
+    width: 15em;
+}
+
+.reveal .slides > section > .logo-portada {
+    margin: auto;
+    border: none;
+}
+
+.reveal .slides > section .logo-portada > img {
+    border: none;
+    box-shadow: none;
 }
 
 .reveal h1, .reveal h2, .reveal h3 {
@@ -57,11 +76,6 @@ body {
     font-weight: bold;
 }
 
-
-@keyframes logoin {
-    from {left: -100%;}
-    to {left: 0px;}
-}
 
 footer {
   -rw-rw-rw-     24371  19-May-2009  10:30:46  0203/03_Simbolo_logo_cor.png	position: absolute;

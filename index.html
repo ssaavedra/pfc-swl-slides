@@ -24,24 +24,27 @@
     <![endif]-->
   </head>
   <body>
-    <div class="udc-logo">
+
+
+    <div id="logo-top" class="udc-logo hide">
       <div class="logo-box">
 	<img src="img/udc.png" />
       </div>
     </div>
+
     <div class="reveal">
       <div class="slides">
-	<section id="portada">
-          <h1>TDSOUP</h1>
-          <h2>Santiago Saavedra López</h2>
-          <h3>&nbsp;</h3>
-          <ul>
-            <li class="inline">Trustable</li>
-            <li class="inline fragment">Distributed</li>
-            <li class="inline fragment">Storage</li>
-            <li class="inline fragment">over untrusted <span class="fragment">peers</span></li>
-          </ul>
+
+	<section id="portada" style="margin-top: -2em">
+	  <div class="logo-portada"><img src="img/udc.png" /></div>
+	  <h5>Facultade de Informática &bull; Departamento de Computación</h5>
+	  <h4>Proxecto de Fin de Carreira de Enxeñería Informática</h4>
+	  <h2>Almacenamento Distribuido sobre Pares no Confiables</h2>
+	  <h4>Alumno: Santiago Saavedra López</h4>
+	  <h5>Directora: Laura M. Castro Souto</h5>
+	  <div>18 de septiembre de 2014</div>
 	</section>
+
 	<section>
           <h2>Problema</h2>
           <p><strong>Compartir contenido</strong></p>
@@ -142,17 +145,17 @@
 	  </section>
 	</section>
 
-	<section id="fin">
-          <h1>TDSOUP</h1>
-          <h2>Santiago Saavedra López</h2>
-          <h3>&nbsp;</h3>
-          <ul>
-            <li class="inline">Trustable</li>
-            <li class="inline">Distributed</li>
-            <li class="inline">Storage</li>
-            <li class="inline">over untrusted peers</li>
-          </ul>
+
+	<section id="fin" style="margin-top: -2em">
+	  <div class="logo-portada"><img src="img/udc.png" /></div>
+	  <h5>Facultade de Informática &bull; Departamento de Computación</h5>
+	  <h4>Proxecto de Fin de Carreira de Enxeñería Informática</h4>
+	  <h2>Almacenamento Distribuido sobre Pares no Confiables</h2>
+	  <h4>Alumno: Santiago Saavedra López</h4>
+	  <h5>Directora: Laura M. Castro Souto</h5>
+	  <div>18 de septiembre de 2014</div>
 	</section>
+
       </div>
     </div>
     <footer class="authors">
@@ -203,6 +206,14 @@
          // { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
          // { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
        ]
+     });
+
+     Reveal.addEventListener('slidechanged', function (event) {
+       if (!Reveal.isFirstSlide() && !Reveal.isLastSlide()) {
+	 document.getElementById("logo-top").classList.remove('hide');
+       } else {
+	 document.getElementById("logo-top").classList.add('hide');
+       }
      });
     </script>
   </body>
