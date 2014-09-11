@@ -1,0 +1,60 @@
+@startuml
+
+!include style.iuml
+
+abstract class Document <<Abstract>> <<Immutable>> {
+	 +id: PK
+	 +{abstract} toJSON () : String
+}
+
+class Identity {
+      +sign (doc: Document) : Signature
+      +verify (doc: Document) : boolean
+      +toJSON () : String
+}
+
+
+class "Content Handler" as Permanode {
+      +random : String
+      +signatures : Signature[]
+       +toJSON () : String
+}
+
+class Claim {
+      +claimType : String
+      +sub : Map<String,String>
+      +date  :Date
+      +toJSON () : String
+}
+
+class SetContentClaim {
+      +sub.attribute : String
+      +toJSON () : String
+}
+
+class "Content Descriptor" as Content {
+      + getLength () : integer
+      +toJSON () : String
+}
+
+class Blob {
+      +content : Bytes[]
+      +toJSON () : String
+}
+
+Document <|-- Permanode
+Document <|-- Claim
+Document <|-- Content
+Document <|-right- Blob
+Document <|-- Identity
+
+Claim <|-- SetContentClaim
+
+Claim --> "+issuer" Identity : identified by >
+Claim --> "+permanode" Permanode : describes >
+Permanode --> "+issuer" Identity
+SetContentClaim --> "+sub.value" Content
+
+Content *-up-> "+bytesref" Blob
+
+@enduml
