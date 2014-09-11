@@ -10,6 +10,7 @@ body {
     width: auto;
     height: auto;
     overflow: hidden;
+    float: left;
 }
 
 .logo-box {
@@ -32,11 +33,15 @@ body.first .udc-logo > .logo-box > img {
     width: 15em;
 }
 
+section.data-model img {
+    max-width: 70%;
+    max-height: 70%;
+}
 
 .nice-authors #authors {
     position: absolute;
     margin: 0;
-    bottom: 2em;
+    bottom: 0em;
     right: -2em;
     width: 15em;
     -webkit-transform: scale(0.5, 0.5);
@@ -46,7 +51,7 @@ body.first .udc-logo > .logo-box > img {
 
 body.first.nice-authors #authors {
     position: absolute;
-    bottom: calc(50% - 3.5em);
+    bottom: calc(50% - 5.2em);
     right: calc(50% - 7.5em);
     margin: 0;
     width: 15em;
