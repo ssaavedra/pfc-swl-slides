@@ -17,7 +17,7 @@ body {
     overflow: hidden;
 }
 
-.udc-logo.hide > .logo-box > img {
+body.first .udc-logo > .logo-box > img {
     left: -100%;
 }
 
@@ -30,6 +30,40 @@ body {
 
 .logo-portada {
     width: 15em;
+}
+
+
+.nice-authors #authors {
+    position: absolute;
+    margin: 0;
+    bottom: 2em;
+    right: -2em;
+    width: 15em;
+    -webkit-transform: scale(0.5, 0.5);
+    transform: scale(0.5, 0.5);
+    transition: all 2s ease;
+}
+
+body.first.nice-authors #authors {
+    position: absolute;
+    bottom: calc(50% - 3.5em);
+    right: calc(50% - 7.5em);
+    margin: 0;
+    width: 15em;
+    padding: 0;
+    text-align: center;
+    font-size: inherit;
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+}
+
+body:not(.nice-authors) #authors {
+    display: none!important;
+}
+
+
+.nice-authors .authors {
+    visibility: hidden;
 }
 
 .reveal .slides > section > .logo-portada {

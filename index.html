@@ -23,7 +23,7 @@
     <script src="lib/js/html5shiv.js"></script>
     <![endif]-->
   </head>
-  <body>
+  <body class="nice-authors">
 
 
     <div id="logo-top" class="udc-logo hide">
@@ -33,15 +33,23 @@
     </div>
 
     <div class="reveal">
+      <div id="authors">
+	<div style="margin:auto">
+	  <h4>Alumno: Santiago Saavedra López</h4>
+	  <h5>Directora: Laura M. Castro Souto</h5>
+	</div>
+      </div>
+
       <div class="slides">
 
 	<section id="portada" style="margin-top: -2em">
 	  <div class="logo-portada"><img src="img/udc.png" /></div>
 	  <h5>Facultade de Informática &bull; Departamento de Computación</h5>
 	  <h4>Proxecto de Fin de Carreira de Enxeñería Informática</h4>
+
 	  <h2>Almacenamento Distribuido sobre Pares no Confiables</h2>
-	  <h4>Alumno: Santiago Saavedra López</h4>
-	  <h5>Directora: Laura M. Castro Souto</h5>
+	  <h4 class="authors">Alumno: Santiago Saavedra López</h4>
+	  <h5 class="authors">Directora: Laura M. Castro Souto</h5>
 	  <div>18 de septiembre de 2014</div>
 	</section>
 
@@ -171,8 +179,8 @@
 	  <h5>Facultade de Informática &bull; Departamento de Computación</h5>
 	  <h4>Proxecto de Fin de Carreira de Enxeñería Informática</h4>
 	  <h2>Almacenamento Distribuido sobre Pares no Confiables</h2>
-	  <h4>Alumno: Santiago Saavedra López</h4>
-	  <h5>Directora: Laura M. Castro Souto</h5>
+	  <h4 class="authors">Alumno: Santiago Saavedra López</h4>
+	  <h5 class="authors">Directora: Laura M. Castro Souto</h5>
 	  <div>18 de septiembre de 2014</div>
 	</section>
 
@@ -228,13 +236,17 @@
        ]
      });
 
-     Reveal.addEventListener('slidechanged', function (event) {
+
+     var configure_body_div = function (event) {
        if (!Reveal.isFirstSlide() && !Reveal.isLastSlide()) {
-	 document.getElementById("logo-top").classList.remove('hide');
+	 document.body.classList.remove('first');
        } else {
-	 document.getElementById("logo-top").classList.add('hide');
+	 document.body.classList.add('first');
        }
-     });
+     }
+
+     Reveal.addEventListener('ready', configure_body_div);
+     Reveal.addEventListener('slidechanged', configure_body_div);
     </script>
   </body>
 </html>
