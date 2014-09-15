@@ -116,22 +116,21 @@ body:not(.nice-authors) #authors {
 }
 
 
-footer {
-  -rw-rw-rw-     24371  19-May-2009  10:30:46  0203/03_Simbolo_logo_cor.png	position: absolute;
-	bottom: 0px;
-	width: 100%;
-	text-align: center;
-	font-family: sans-serif;
-	color: #eeeeee;
-	display:table;
-	vertical-align: middle;
-	z-index: 40;
-}
+/* footer { */
+/* 	bottom: 0px; */
+/* 	width: 100%; */
+/* 	text-align: center; */
+/* 	font-family: sans-serif; */
+/* 	color: #eeeeee; */
+/* 	display:table; */
+/* 	vertical-align: middle; */
+/* 	z-index: 40; */
+/* } */
 
-footer > * {
-	display:table-cell;
-	vertical-align: middle;
-}
+/* footer > * { */
+/* 	display:table-cell; */
+/* 	vertical-align: middle; */
+/* } */
 
 footer li {
 	list-style: none;

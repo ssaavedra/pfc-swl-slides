@@ -54,18 +54,30 @@
 	</section>
 
 	<section>
-          <h2>Problema</h2>
-          <p><strong>Compartir contenido</strong></p>
-          <ul>
-            <li>Confiable</li>
-            <li>Auténtico</li>
-            <li>Actualizable</li>
-            <li>Descentralizado</li>
-          </ul>
+	  <section>
+            <h2>Problema</h2>
+            <p><strong>Compartir contenido</strong></p>
+            <ul>
+              <li>Confiable</li>
+              <li>Auténtico</li>
+              <li>Actualizable</li>
+              <li>Descentralizado</li>
+            </ul>
+	  </section>
+
+	  <section>
+	    <h2>Importancia</h2>
+	    <p>Imprescindible en la sociedad</p>
+	    <p>Progreso y avance</p>
+	    <p>Spread out conocimiento</p>
+	    <p>Sin posibilidad de censura o modificación</p>
+	  </section>
 	</section>
+
 	<section>
           <h2>Panorama actual</h2>
 	  <ul>
+	    <li class="fragment fade-out">Redes de distribución de contenido (CDN)</li>
 	    <li>Sistemas de control de versiones
 	      <ul>
 		<li class="fragment shrink">CVS, subversion...</li>
@@ -80,11 +92,9 @@
 	      </ul>
 	    </li>
 	    <li>Sistemas P2P<ul>
-	      <li class="fragment highlight-current-bold">Bittorrent</li>
+	      <li class="fragment highlight-current-bold">BitTorrent</li>
 	      <li class="fragment grow">Syncthing</li>
 	    </ul></li>
-
-	    <li class="fragment fade-out" data-fragment-index="1">Redes de distribución de contenido (CDN)</li>
 	  </ul>
 	</section>
 
@@ -94,8 +104,8 @@
 	    <h2>Nuestra propuesta</h2>
             <ul>
               <li>Almacenamiento</li>
-              <li>Distribuido</li>
-              <li>sobre pares no confiables</li>
+	      <li>de contenido versionado</li>
+              <li>Distribuido sobre pares no confiables</li>
             </ul>
 	  </section>
 	  <section>
@@ -104,6 +114,7 @@
 	      <li>Biblioteca para aplicaciones finales</li>
 	      <li>Responsabilidad única</li>
 	      <li>Identidades</li>
+	      <li>Agnóstico al contenido</li>
 	    </ul>
 	  </section>
 	</section>
@@ -120,7 +131,34 @@
 	  </section>
 	  <section>
 	    <h2>¿Qué es una DHT?</h2>
-	    <p>Me meto en esto en la presentación?</p>
+	    <p><div style="width: 80%; margin: auto">
+		<img src="img/chord_network.png" style="width: auto; height: auto"/>
+	    </div></p>
+
+	    <small>
+	      <a title="By Seth Terashima (Tetra7 (talk)) (Own work)
+	      [CC-BY-SA-3.0
+	      (http://creativecommons.org/licenses/by-sa/3.0) or GFDL
+	      (http://www.gnu.org/copyleft/fdl.html)], via Wikimedia
+	      Commons"
+	      href="http://commons.wikimedia.org/wiki/File%3AChord_route.png">
+		By Seth Terashima (Own work), CC-BY-SA-3.0 and GFDL, via Wikipedia Commons.
+	      </a>
+	    </small>
+	  </section>
+
+	  <section>
+	    <h2>Ejemplo de DHT: Kademlia</h2>
+	    <p><img src="img/kad-tree.svg" style="width:100%" /></p>
+
+	    <small>
+	      <a title="By Limaner (Own work) [CC-BY-SA-3.0
+	      (http://creativecommons.org/licenses/by-sa/3.0)], via
+	      Wikimedia Commons"
+	      href="http://commons.wikimedia.org/wiki/File%3ADht_example_SVG.svg">
+		By Limaner (Own work), CC-BY-SA-3.0, via Wikipedia Commons.
+	      </a>
+	    </small>
 	  </section>
 	</section>
 
@@ -136,6 +174,7 @@
 	  <section>
 	    <h2>Modelo de datos robusto</h2>
 	    <ul>
+	      <li>Documento ~ contenido|<sub><small style="vertical-align: bottom">v=versión</small></sub></li>
 	      <li>Sin pérdida de información</li>
 	      <li>Cada versión nueva se identifica inequívocamente</li>
 	      <li>Árbol de versiones</li>
@@ -153,15 +192,27 @@
 	</section>
 
 	<section>
-	  <h2>Arquitectura</h2>
-	  <ul>
-	    <li class="fragment grow">Capa de distribución<span class="fragment">: KadOH</span></li>
-	    <li class="fragment grow">Capa de persistencia<span class="fragment">: CouchDB</span></li>
-	    <li class="fragment grow">API HTTP</li>
-	    <li class="fragment shrink">Sistema de plugins</li>
-	    <li class="fragment shrink">Sistema de aplicaciones incrustadas</li>
-	    <li class="fragment grow">Aplicaciones incrustadas</li>
-	  </ul>
+	  <section>
+	    <h2>Arquitectura</h2>
+	    <ul>
+	      <li class="fragment grow">Capa de distribución<span class="fragment">: KadOH</span></li>
+	      <li class="fragment grow">Capa de persistencia<span class="fragment">: CouchDB</span></li>
+	      <li class="fragment grow">API HTTP</li>
+	      <li class="fragment shrink">Sistema de plugins</li>
+	      <li class="fragment shrink">Sistema de aplicaciones incrustadas</li>
+	      <li class="fragment grow">Aplicaciones incrustadas</li>
+	    </ul>
+	  </section>
+
+	  <section>
+	    <h2>Kademlia</h2>
+	    <p>DHT ampliamente usada con éxito</p>
+	    <ul>
+	      <li>BitTorrent</li>
+	      <li>Pando Media Booster</li>
+	      <li>Blizzard Updater</li>
+	    </ul>
+	  </section>
 	</section>
 
 	<section>
@@ -172,20 +223,53 @@
 
 	  <section>
 	    <h2>Wikita es</h2>
-	    <p class="fragment highlight-current-bold">Una wiki distribuida con múlitples versiones y búsqueda por título.</p>
+	    <p class="fragment highlight-current-bold">Una wiki distribuida con múltiples versiones y búsqueda por título.</p>
 	    <p class="fragment highlight-current-bold">Se pueden ver versiones anteriores</p>
 	    <p class="fragment highlight-current-bold">Múltiples hijos por versión</p>
 	    <p class="fragment highlight-current-bold">Páginas de desambiguación autogeneradas</p>
 	  </section>
+
+	  <section style="margin-top: -2em">
+	    <h2>Demo</h2>
+	    <iframe src="http://127.0.0.1:8124/app/wiki/sha1-85ec4af643daf06bc8430d7d5a4d6e3dac163729" style="width:100%;height:100%;min-height:18em; box-shadow: 0 0 10px rgba(0, 0, 0, 0.15); padding:10px">Iframe goes here</iframe>
+	  </section>
+
+	  <section>
+	    <h2>Hemos desarrollado</h2>
+	    <p>Páginas de desambiguación/búsqueda automáticas</p>
+	    <p>Plantillas para almacenar la información</p>
+	    <p>UX/UI</p>
+	  </section>
+
+	  <section>
+	    <h2>No hemos necesitado desarrollar</h2>
+	    <p>Persistencia y distribución</p>
+	    <p>Búsqueda por título</p>
+	    <p>Firmas digitales</p>
+	  </section>
+	</section>
+
+	<section>
+	  <h2>Licencias</h2>
+	  <p>El código es Sofware Libre, ver LICENSE dentro del repositorio.</p>
+	  <hr />
+	  <p>Código JavaScript disponible en <a href="https://bitbucket.org/ssaavedra/soup-rest">bitbucket/ssaavedra/soup-rest</a></p>
+	  <p>Wikita disponible en <a href="https://bitbucket.org/ssaavedra/soup-wiki-app">bitbucket/ssaavedra/soup-wiki-app</a></p>
+	  <p>Memoria del Proyecto licenciada bajo CC-BY-SA y GFDL</p>
+	  <p>Presentación bajo CC-BY-SA 4.0 International</p>
+
+	  <hr />
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />Este obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.
+
 	</section>
 
 	<section>
 	  <h2>¿Qué hemos conseguido?</h2>
-	  <p>Contenido actualizable</p>
-	  <p>Múltiples versiones</p>
-	  <p>Integridad en cada versión</p>
-	  <p>Distribución de contenido</p>
-	  <p>Comunicaciones P2P</p>
+	  <p class="fragment highlight-current-bold">Contenido actualizable</p>
+	  <p class="fragment highlight-current-bold">Múltiples versiones</p>
+	  <p class="fragment highlight-current-bold">Integridad en cada versión</p>
+	  <p class="fragment highlight-current-bold">Distribución de contenido</p>
+	  <p class="fragment highlight-current-bold">Comunicaciones P2P</p>
 	</section>
 
 	<section id="fin" style="margin-top: 0em">
