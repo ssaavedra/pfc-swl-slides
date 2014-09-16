@@ -1,0 +1,88 @@
+	.style0{
+		fill:	#cbd7eb;
+		fill-rule:	nonzero;
+		stroke:	#000000;
+		stroke-width:	0.3985;
+		stroke-miterlimit:	10;
+	}
+	.style1{
+		fill:	#a4bce0;
+		fill-rule:	nonzero;
+		stroke:	#000000;
+		stroke-width:	0.3985;
+		stroke-miterlimit:	10;
+	}
+	.ownthings{
+		fill:	#7c9ccd;
+		fill-rule:	nonzero;
+		stroke:	#ffffff;
+		stroke-width:	0.49812499;
+		stroke-miterlimit:	10;
+	}
+	.platformthings {
+		 fill:	#7c9ccd;
+		fill-rule:	nonzero;
+		stroke:	#ffffff;
+		stroke-width:	0.49812499;
+		stroke-miterlimit:	10;
+	}
+
+	[data-what=dht] > path {
+		fill:	#7c9ccd;
+		fill-rule:	nonzero;
+		stroke:	#ffffff;
+		stroke-width:	0.49812499;
+		stroke-miterlimit:	10;
+	}
+	g.current-fragment[data-highlight=red] > path {
+		stroke: #FF0000;
+		stroke-width: 4;
+	}
+	.style3{
+		font-size:	9.96259975px;
+		writing-mode:	lr-tb;
+		fill:	#ffffff;
+		fill-rule:	nonzero;
+		font-family:	CMSSBX10;
+		-inkscape-font-specification:	CMSSBX10;
+	}
+	.style4{
+		font-size:	15px;
+	}
+	.style5{
+		font-size:	12.45324993px;
+		writing-mode:	lr-tb;
+		fill:	#ffffff;
+		fill-rule:	nonzero;
+		font-family:	CMSSBX10;
+		-inkscape-font-specification:	CMSSBX10;
+	}
+	.style6{
+		fill:	#4979c1;
+		fill-rule:	nonzero;
+		stroke:	#000000;
+		stroke-width:	0.49812499;
+		stroke-miterlimit:	10;
+	}
+	.style7{
+		fill:	#cad97e;
+		fill-rule:	nonzero;
+		stroke:	#ffffff;
+		stroke-width:	0.49812499;
+		stroke-miterlimit:	10;
+	}
+	.style8{
+		fill:	#95b300;
+		fill-rule:	nonzero;
+		stroke:	#000000;
+		stroke-width:	0.49812499;
+		stroke-miterlimit:	10;
+	}
+	.style9{
+		font-size:	12.45324993px;
+		writing-mode:	lr-tb;
+		fill:	#ffffff;
+		fill-rule:	nonzero;
+		font-family:	CMSSI10;
+		-inkscape-font-specification:	CMSSI10;
+	}
