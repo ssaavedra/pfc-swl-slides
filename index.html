@@ -527,7 +527,9 @@
 
 
      var configure_body_div = function (event) {
-       if (!Reveal.isFirstSlide() && !Reveal.isLastSlide()) {
+
+       // Not using isFirstSlide because that takes into consideration whether unfolding was correctly performed
+       if (document.body.querySelector("#portada.present") === null && !Reveal.isLastSlide()) {
 	 document.body.classList.remove('first');
        } else {
 	 document.body.classList.add('first');
