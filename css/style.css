@@ -116,6 +116,19 @@ body:not(.nice-authors) #authors {
 }
 
 
+.reveal .slides section .fragment.shrink-past {
+    opacity: 1;
+}
+
+.reveal .slides section .fragment.shrink-past.visible.current-fragment {
+    transform: scale(1);
+}
+
+.reveal .slides section .fragment.shrink-past.visible {
+    transform: scale(0.7);
+}
+
+
 /* footer { */
 /* 	bottom: 0px; */
 /* 	width: 100%; */

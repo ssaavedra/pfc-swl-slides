@@ -62,14 +62,14 @@
 
 	<section>
 	  <section>
-            <h2>Problema</h2>
-            <p><strong>Compartir contenido</strong></p>
-            <ul>
-              <li>Confiable</li>
-              <li>Auténtico</li>
-              <li>Actualizable</li>
-              <li>Descentralizado</li>
-            </ul>
+	    <h2>Problema</h2>
+	    <p><strong>Compartir contenido</strong></p>
+	    <ul class="fragment">
+	      <li>Confiable</li>
+	      <li>Auténtico</li>
+	      <li>Actualizable</li>
+	      <li>Descentralizado</li>
+	    </ul>
 	  </section>
 
 	  <section>
@@ -82,19 +82,19 @@
 	</section>
 
 	<section>
-          <h2>Panorama actual</h2>
+	  <h2>Panorama actual</h2>
 	  <ul>
 	    <li class="fragment fade-out">Redes de distribución de contenido (CDN)</li>
 	    <li>Sistemas de control de versiones
 	      <ul>
-		<li class="fragment shrink">CVS, subversion...</li>
-		<li class="fragment grow">git, mercurial...</li>
+		<li class="fragment highlight-current-bold shrink-past">CVS, subversion...</li>
+		<li class="fragment highlight-current-bold">git, mercurial...</li>
 	      </ul>
 	    </li>
 	    <li>Sistemas en la nube
 	      <ul class="inline">
-		<li class="fragment shrink">Dropbox</li>
-		<li class="fragment shrink">Google Drive</li>
+		<li class="fragment highlight-current-bold shrink-past">Dropbox</li>
+		<li class="fragment highlight-current-bold shrink-past">Google Drive</li>
 		<li class="fragment highlight-current-bold">ownCloud</li>
 	      </ul>
 	    </li>
@@ -109,11 +109,11 @@
 
 	  <section>
 	    <h2>Nuestra propuesta</h2>
-            <ul>
-              <li>Almacenamiento</li>
+	    <ul>
+	      <li>Almacenamiento</li>
 	      <li>de contenido versionado</li>
-              <li>Distribuido sobre pares no confiables</li>
-            </ul>
+	      <li>Distribuido sobre pares no confiables</li>
+	    </ul>
 	  </section>
 	  <section>
 	    <h2>¿Qué planteamos?</h2>
@@ -283,7 +283,7 @@
 		      </text>
 		    </g>
 
-		    
+
 
 		  </g>
 		</g>
@@ -415,6 +415,254 @@
 	  <section style="margin-top: -2em">
 	    <h2>Demo</h2>
 	    <iframe src="http://127.0.0.1:8124/app/wiki/sha1-85ec4af643daf06bc8430d7d5a4d6e3dac163729" style="width:100%;height:100%;min-height:18em; box-shadow: 0 0 10px rgba(0, 0, 0, 0.15); padding:10px">Iframe goes here</iframe>
+
+
+	    <aside class="notes">
+
+	      <h2>Hola mundo</h2>
+
+	      <pre style="width:20em; height:10em; overflow:scroll">
+El patrón de diseño **Adapter** (Adaptador) se utiliza para transformar una interfaz en otra, de tal modo que una **clase** que no pudiera utilizar la primera, haga uso de ella a través de la segunda.
+
+Propósito
+==========
+
+Convierte la interfaz de una clase en otra interfaz que el cliente espera. ''Adapter'' permite a las clases trabajar juntas, lo que de otra manera no podría hacerlo debido a sus interfaces incompatibles.
+
+También conocido como
+=====================
+* *Wrapper* (envoltorio)
+
+Aplicabilidad
+=============
+
+*usar el patrón* Adapter *cuando:*
+
+ - Se desea usar una clase existente, y su interfaz no se iguala con la necesitada.
+ - Cuando se desea crear una clase reusable que coopera con clases no relacionadas, es decir, las clases no tienen necesariamente interfaces compatibles.
+
+Participantes
+=============
+
+ - **Target** define la interfaz específica del dominio que *Client* usa.
+ - **Client** colabora con la conformación de objetos para la interfaz *Target*.
+ - **Adaptee** define una interfaz existente que necesita adaptarse
+ - **Adapter** adapta la interfaz de *Adaptee* a la interfaz +Target*
+
+Colaboraciones
+==============
+
+- **Client** llama a las operaciones sobre una instancia *Adapter*. De hecho, el adaptador llama a las operaciones de *Adaptee* que llevan a cabo el pedido.
+
+Consecuencias
+=============
+
+*los adaptadores de clase y objetos tienen diferentes trade-off*
+
+- Un adaptador de clase:
+  - Adapta *Adaptee* a *Target* encargando a una clase *Adaptee* concreta. Como consecuencia, una clase adaptadora no funcionará cuando se desea adaptar una clase *y* todas sus subclases.
+  - Permite a los *Adapter* sobrescribir algo de comportamiento de *Adaptee*, ya que *Adapter* es una subclase de *Adaptee*.
+- Un adaptador de objeto:
+  - Permite que un único *Adapter* trabaje con muchos *Adaptees*, es decir, el *Adapter* por sí mismo y las subclases (si es que la tiene). El *Adapter* también puede agregar funcionalidad a todos los *Adaptees* de una sola vez.
+  - Hace difícil sobrescribir el comportamiento de *Adaptee*. Esto requerirá derivar *Adaptee* y hacer que *Adapter* se refiera a la subclase en lugar que al *Adaptee* por sí mismo.
+
+Aquí hay otras cuestiones a considerar cuando se utiliza el patrón *Adapter*:
+1. *¿Cuanta adaptación hace el Adapter?* Adapter varía en la cantidad de trabajo que hace para adaptar *Adaptee* a la interfaz *Target*. Hay un espectro de trabajo posible, desde una simple conversión (por ejemplo, cambiando los nombres de las operaciones) hasta soportando un conjunto de operaciones enteramente diferentes. La cantidad de trabajo que *Adapter* hace depende de cuanto de similar tienen la interfaz *Target* con *Adaptee*.
+2. *Adaptadores Pluggables* Una clase es más reusable cuando se minimiza la suposición de que otras clases deben utilizarla. Mediante la construcción en una clase de la adaptación de una interfaz, se elimina la suposición de que otras clases ven la misma interfaz. Dicho de otra manera, la adaptación de la interfaz nos permite incorporar a nuestra clase en sistemas existentes que pueden esperar diferentes interfaces de la misma.
+
+Implementación
+==============
+
+Crear una nueva clase que será el *Adaptador*, que
+extienda del componente existente e implemente la
+interfaz obligatoria. De este modo tenemos la
+funcionalidad que queríamos y cumplimos la condición
+de implementar la interfaz.
+
+La diferencia entre los patrones **Adapter** y
+***Facade***, es que el primero reutiliza una interfaz
+ya existente, mientras que el segundo define una nueva
+con el objetivo de simplificarla.
+
+
+
+    package Structural_patterns;
+
+    public class AdapterWrapperPattern {
+
+        public static void main(String args[]) {
+        Guitar eGuitar = new ElectricGuitar();
+        eGuitar.onGuitar();
+        eGuitar.offGuitar();
+        Guitar eAGuitar = new ElectricAcousticGuitar();
+        eAGuitar.onGuitar();
+        eAGuitar.offGuitar();
+    }
+
+
+	public abstract class Guitar{
+	    abstract public void onGuitar();
+	    abstract public void offGuitar();
+	}
+
+	public class ElectricGuitar extends Guitar {
+
+	    public void onGuitar() {
+		System.out.println("Playing Guitar");
+	    }
+
+	    public void offGuitar() {
+		System.out.println("I'm tired to play the guitar");
+	    }
+	}
+
+	/**
+	 * Class to Adapter/Wrapper
+	 */
+	public class AcousticGuitar {
+
+	    public void play() {
+		System.out.println("Playing Guitar");
+	    }
+	    public void leaveGuitar() {
+		System.out.println("I'm tired to play the guitar");
+	    }
+	}
+
+	/**
+	 * we Adapter/Wrapper AcousticGuitar into
+	 * ElectricAcousticGuitar to adapt into the GuitarModel
+	 */
+	public class ElectricAcousticGuitar extends Guitar {
+	    AcousticGuitar acoustic = new AcousticGuitar();
+
+	    public void onGuitar() {
+		acoustic.play();
+	    }
+
+	    public void offGuitar() {
+		acoustic.leaveGuitar();
+	    }
+	}
+    }
+
+
+Enlaces externos
+================
+
+- [Patrón Adapter: explicación y modelo UML][1]
+- [Implementación en Java][2]
+
+
+  [1]: http://design-patterns-with-uml.blogspot.com.ar/2013/02/adapter-pattern.html
+  [2]: http://software.guisho.com/patron-adaptador-pattern-adapter-patrones-de-diseno
+
+</pre>
+
+	      <pre style="width:20em; height:10em; overflow:scroll">
+Un **adaptador de corriente alterna**, **adaptador AC/DC** o
+**convertidor AC/DC** es un tipo de alimentación externa, a menudo
+encerrada en lo que aparenta ser una clavija de corriente de gran
+tamaño. Otras denominaciones que se emplean son la de paquete de
+enchufe, adaptador de enchufe, bloque adaptador, adaptador de red
+eléctrica doméstica, adaptador de línea en línea o adaptador de
+corriente. Entre los términos informales se encuentran verrugas de
+pared, cubo de pared y bloque de electricidad.
+
+Los adaptadores de corriente alterna se utilizan normalmente con los
+dispositivos eléctricos que no contienen su propia fuente de
+alimentación interna. Los circuitos internos de una fuente de
+alimentación externa son muy similares en diseño al que se utiliza
+para la alimentación imbuido (built-in) o interna, pero existen varias
+ventajas de separar la fuente de alimentación del cuerpo principal del
+dispositivo electrónico.
+
+Reutilización
+=============
+
+Los adaptadores de CA se suelen reutilizar en otros aparatos, pero hay cinco parámetros que todos deben adaptarse a la máquina:
+
+* Voltaje
+* Capacidad de corriente
+* Polaridad
+* Regulación del voltaje (o estabilización)
+* Tipo de conector
+
+Existen adaptadores "universales" en los que el usuario puede ajustar
+estos parámetros.
+
+Adaptadores de corriente universales
+====================================
+
+Es inherente a los adaptadores externos de corriente el que se pueden
+obtener separados del producto al que están destinados a alimentar. En
+consecuencia, existe un Mercado de adaptadores de reemplazo. Además,
+se deben sustituir las fuentes de alimentación que se han averiado. No
+sólo debe coincidir el adaptador sustituto en el voltaje, corriente y
+polaridad, sino también debe coincidir en el tipo de conector. Muchos
+productos eléctricos están mal etiquetados en lo referente a la
+información sobre el suministro de energía que requieren, por lo que
+es prudente registrar con antelación las especificaciones de la fuente
+de alimentación original, para así facilitar el reemplazo si el
+original se pierde posteriormente. El etiquetado cuidadoso de los
+adaptadores de corriente también puede reducir la probabilidad de una
+confusión desastrosa que podría causar daños al equipo.
+
+Algunas fuentes de alimentación de reemplazo llamadas "universales"
+permiten que se cambie el voltaje y la polaridad, lo que puede aliviar
+el problema de la concordancia. Además, el conector de alimentación
+debe coincidir.
+
+Los **conectores X** de cuatro direcciones o los **conectores de
+estrella** de seis vías, también conocidos como conectores araña, con
+múltiples tipos y tamaños de enchufe, son comunes en las fuentes de
+alimentación genéricas. Otras fuentes de alimentación de reemplazo
+están preparadas para cambiar el conector de alimentación, con de
+cuatro hasta nueve alternativas diferentes disponibles si se compran
+en un conjunto.
+
+Una fuente de alimentación adecuada para un uso determinado debe tener
+las dimensiones del enchufe adecuadas, el voltaje y la polaridad de DC
+(o AC) coincidente y la capacidad de suministrar por lo menos la
+corriente requerida.  El voltaje de entrada debe coincidir con el
+enchufe de pared (115 / 230 V CA a 60/50 Hz) o de otra fuente de
+energía, como la energía de la batería de automoción (12V).
+
+Pero la etiqueta de una fuente de alimentación no puede ser una guía
+fiable de la tensión real que se suministra en condiciones
+variables. La mayoría de las fuentes de alimentación de bajo costo son
+"no reguladas", ya que su voltaje puede cambiar considerablemente con
+la carga. Si están con poca carga, puede producir mucho más tensión
+que la indicada en el nominal de la "etiqueta", lo que podría dañar la
+carga. Si se cargan mucho, la tensión de salida puede caer
+considerablemente, en algunos casos muy por debajo de la tensión
+nominal de la etiqueta, aunque estemos dentro de la corriente nominal,
+haciendo que el equipo al que se alimenta tenga un funcionamiento
+defectuoso o que quede dañado. Las fuentes de alimentación externas
+baratas de diseño tradicional con transformadores infradimensionados
+tienden a tener una mala regulación, tanto si son unidades originales
+o como de reemplazo.
+
+En general, las más modernas y de mayor calidad fuentes conmutadas
+(también conocidas como switched-mode power supplies o SMPS) son más
+pequeñas, más eficientes y ofrecen una tensión mucho más constante,
+incluso cuando el voltaje de entrada y la corriente de carga puedan
+variar. Se ha reducido considerablemente el precio de las fuentes
+conmutadas configurables y son especialmente convenientes para el uso
+en el transporte debido a su reducido peso y tamaño.
+
+Enlaces externos
+================
+
+- [Una encuesta revela que los consumidores se cansan de las verrugas de pared][1] - Artículo de Power Electronics Technology sobre las preocupaciones de los consumidores sobre las verrugas de la pared.
+- [Google empuja la eficiencia eléctrica de los PCs; efectos secundarios: no más verrugas de pared][2] - artículo de Treehugger.com. Google propone la normalización de los sistemas de 12 voltios.
+
+  [1]: http://powerelectronics.com/power_systems/news/consumer-survey-wall-warts-0528/
+  [2]: http://www.treehugger.com/files/2006/09/google_pushes_f.php
+
+
+	      </pre>
+	    </aside>
 	  </section>
 
 	  <section>
@@ -478,7 +726,7 @@
     <footer class="authors">
       <div style="float:right;text-align:left; margin-right: 0">
 	<ul>
-          <li>Santiago Saavedra López <a class="udc_cuenta" href="mailto:santiago.saavedral@udc.es">(santiago.saavedral@udc.es)</a></li>
+	  <li>Santiago Saavedra López <a class="udc_cuenta" href="mailto:santiago.saavedral@udc.es">(santiago.saavedral@udc.es)</a></li>
 	</ul>
       </div>
     </footer>
@@ -490,11 +738,11 @@
        console.log(s)
        s = Array.prototype.slice.call(s, 0);
        s.forEach(function(obj) {
-         var e = document.createElement('div');
-         e.className = "fragment demo-fragment"
-         e.innerHTML = "DEMO"
-         console.log(obj)
-         obj.appendChild(e)
+	 var e = document.createElement('div');
+	 e.className = "fragment demo-fragment"
+	 e.innerHTML = "DEMO"
+	 console.log(obj)
+	 obj.appendChild(e)
        })}, false);
      // Full list of configuration options available here:
      // https://github.com/hakimel/reveal.js#configuration
@@ -512,16 +760,16 @@
        transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
        // Optional libraries used to extend on reveal.js
        dependencies: [
-         { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-         { src: 'reveal.js/plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-         { src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-         { src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-         { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-         { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
-         { src: '/socket.io/socket.io.js', async: true },
-         { src: 'notes-server/client.js', async: true },
-         // { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
-         // { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+	 { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+	 { src: 'reveal.js/plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+	 { src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+	 { src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+	 { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+	 { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+	 // { src: '/socket.io/socket.io.js', async: true },
+         // { src: 'reveal.js/plugin/notes-server/client.js', async: true },
+	 // { src: 'reveal.js/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+	 { src: 'reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
        ]
      });
 
