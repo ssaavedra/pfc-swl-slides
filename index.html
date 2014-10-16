@@ -737,7 +737,20 @@ Enlaces externos
     <script src="reveal.js/lib/js/head.min.js"></script>
     <script src="reveal.js/js/reveal.min.js"></script>
     <script>
+
+     var isapdf = window.location.search.match( /print-pdf/gi );
+     console.log("ISAPDF=", isapdf);
      window.addEventListener('load', function() {
+
+
+       if (isapdf) {
+         var l = document.getElementById('logo-top');
+         l.parentNode.removeChild(l);
+         l = document.getElementsByTagName('footer')[0];
+     console.log(l)
+         l.parentNode.removeChild(l);
+       }
+
        var s = document.getElementsByClassName('demo');
        console.log(s)
        s = Array.prototype.slice.call(s, 0);
@@ -773,7 +786,7 @@ Enlaces externos
 	 // { src: '/socket.io/socket.io.js', async: true },
          // { src: 'reveal.js/plugin/notes-server/client.js', async: true },
 	 // { src: 'reveal.js/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
-	 { src: 'reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+	 { src: 'reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList && !isapdf; } }
        ]
      });
 
