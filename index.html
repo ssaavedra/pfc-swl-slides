@@ -54,16 +54,16 @@
 	  <h5>Facultade de Informática &bull; Departamento de Computación</h5>
 	  <h4>Proxecto de Fin de Carreira de Enxeñería Informática</h4>
 
-	  <h2>Almacenamiento Distribuido y Confiable sobre Pares no Confiables</h2>
+	  <h2>Almacenamento Distribuido e Confiable sobre Pares non Confiables</h2>
 	  <h4 class="authors">Alumno: Santiago Saavedra López</h4>
 	  <h5 class="authors">Directora: Laura M. Castro Souto</h5>
-	  <div>18 de septiembre de 2014</div>
+	  <div>17 de outubro de 2014</div>
 	</section>
 
 	<section>
 	  <section>
 	    <h2>Problema</h2>
-	    <p><strong>Compartir contenido</strong></p>
+	    <p><strong>Compartir contido</strong></p>
 	    <ul class="fragment">
 	      <li>Confiable</li>
 	      <li>Auténtico</li>
@@ -74,24 +74,24 @@
 
 	  <section>
 	    <h2>Importancia</h2>
-	    <p>Imprescindible en la sociedad</p>
-	    <p>Progreso y avance</p>
-	    <p>Difusión de conocimiento</p>
-	    <p>Sin posibilidad de censura o modificación</p>
+	    <p>Imprescindible na sociedade</p>
+	    <p>Progreso e avance</p>
+	    <p>Difusión de coñecemento</p>
+	    <p>Sen posibilidade de censura ou modificación</p>
 	  </section>
 	</section>
 
 	<section>
 	  <h2>Panorama actual</h2>
 	  <ul>
-	    <li class="fragment fade-out">Redes de distribución de contenido (CDN)</li>
-	    <li>Sistemas de control de versiones
+	    <li class="fragment fade-out">Redes de distribución de contido (CDN)</li>
+	    <li>Sistemas de control de versións
 	      <ul>
 		<li class="fragment highlight-current-bold shrink-past">CVS, subversion...</li>
 		<li class="fragment highlight-current-bold">git, mercurial...</li>
 	      </ul>
 	    </li>
-	    <li>Sistemas en la nube
+	    <li>Sistemas na nube
 	      <ul class="inline">
 		<li class="fragment highlight-current-bold shrink-past">Dropbox</li>
 		<li class="fragment highlight-current-bold shrink-past">Google Drive</li>
@@ -108,19 +108,19 @@
 	<section>
 
 	  <section>
-	    <h2>Nuestra propuesta</h2>
+	    <h2>A nosa proposta</h2>
 	    <ul>
-	      <li>Almacenamiento</li>
-	      <li>de contenido versionado</li>
-	      <li>Distribuido sobre pares no confiables</li>
+	      <li>Almacenamento</li>
+	      <li>de contido versionado</li>
+	      <li>Distribuido sobre pares non confiables</li>
 	    </ul>
 	  </section>
 	  <section>
-	    <h2>¿Qué planteamos?</h2>
+	    <h2>Que plantexamos?</h2>
 	    <ul>
-	      <li>Biblioteca para aplicaciones finales</li>
-	      <li>Responsabilidad única</li>
-	      <li>Agnóstico al contenido</li>
+	      <li>Biblioteca para aplicacións finales</li>
+	      <li>Responsabilidade única</li>
+	      <li>Agnóstico ao contido</li>
 	      <li>Identidades</li>
 	    </ul>
 	  </section>
@@ -128,16 +128,16 @@
 
 	<section>
 	  <section>
-	    <h2>Almacenamiento distribuido</h2>
+	    <h2>Almacenamento distribuido</h2>
 	    <dl>
-	      <dt>¿Por qué?</dt>
-	      <dd class="fragment">No se necesita confianza en terceros</dd>
-	      <dt>¿Cómo?</dt>
+	      <dt>Por que?</dt>
+	      <dd class="fragment">Non se precisa confianza en terceiros</dd>
+	      <dt>Como?</dt>
 	    <dd class="fragment">Sistemas probados: DHT</dd>
 	    </dl>
 	  </section>
 	  <section>
-	    <h2>¿Qué es una DHT?</h2>
+	    <h2>Que é unha DHT?</h2>
 	    <p><div style="width: 80%; margin: auto">
 		<img src="img/chord_network.png" style="width: auto; height: auto"/>
 	    </div></p>
@@ -155,7 +155,7 @@
 	  </section>
 
 	  <section>
-	    <h2>Ejemplo de DHT: Kademlia</h2>
+	    <h2>Exemplo de DHT: Kademlia</h2>
 	    <p><img src="img/kad-tree.svg" style="width:100%" /></p>
 
 	    <small>
@@ -182,8 +182,8 @@
 	<section>
 	  <h2>Confiable</h2>
 	  <ul>
-	    <li>Firmas digitales en cada transacción</li>
-	    <li>Cada versión es inmutable</li>
+	    <li>Firmas dixitais en cada transacción</li>
+	    <li>Cada versión é inmutable</li>
 	  </ul>
 	</section>
 
@@ -191,10 +191,10 @@
 	  <section>
 	    <h2>Modelo de datos robusto</h2>
 	    <ul>
-	      <li>Documento ~ contenido|<sub><small style="vertical-align: bottom">v=versión</small></sub></li>
-	      <li>Sin pérdida de información</li>
-	      <li>Cada versión nueva se identifica inequívocamente</li>
-	      <li>Árbol de versiones</li>
+	      <li>Documento ~ contido|<sub><small style="vertical-align: bottom">v=versión</small></sub></li>
+	      <li>Sen perda de información</li>
+	      <li>Cada versión nova identíficase inequívocamente</li>
+	      <li>Árbol de versións</li>
 	    </ul>
 	  </section>
 	  <section style="margin-top: 1em; margin-bottom: 1em" class="data-model" data-transition="fade">
@@ -218,8 +218,8 @@
 	      <li class="fragment grow">Capa de persistencia<span class="fragment">: CouchDB</span></li>
 	      <li class="fragment grow">API HTTP</li>
 	      <li class="fragment shrink">Sistema de plugins</li>
-	      <li class="fragment shrink">Sistema de aplicaciones incrustadas</li>
-	      <li class="fragment grow">Aplicaciones incrustadas</li>
+	      <li class="fragment shrink">Sistema de aplicacións incrustadas</li>
+	      <li class="fragment grow">Aplicacións incrustadas</li>
 	    </ul>
 	  </section>
 
@@ -400,18 +400,19 @@
 
 	<section>
 	  <section>
-	    <h2>Como prueba de concepto...</h2>
+	    <h2>Como proba de concepto...</h2>
 	    <p class="fragment">... construimos <em>wikita</em>.</p>
 	  </section>
 
 	  <section>
-	    <h2>Wikita es</h2>
-	    <p class="fragment highlight-current-bold">Una wiki distribuida con múltiples versiones y búsqueda por título.</p>
-	    <p class="fragment highlight-current-bold">Se pueden ver versiones anteriores</p>
-	    <p class="fragment highlight-current-bold">Múltiples hijos por versión</p>
-	    <p class="fragment highlight-current-bold">Páginas de desambiguación autogeneradas</p>
+	    <h2>Wikita é</h2>
+	    <p class="fragment highlight-current-bold">Unha wiki distribuida con múltiples versións e búsqueda por título.</p>
+	    <p class="fragment highlight-current-bold">Pódense ver versións anteriores</p>
+	    <p class="fragment highlight-current-bold">Múltiples fillos por versión</p>
+	    <p class="fragment highlight-current-bold">Páxinas de desambiguación autoxeradas</p>
 	  </section>
 
+	  <!--
 	  <section style="margin-top: -2em">
 	    <h2>Demo</h2>
 	    <iframe src="http://127.0.0.1:8124/app/wiki/sha1-85ec4af643daf06bc8430d7d5a4d6e3dac163729" style="width:100%;height:100%;min-height:18em; box-shadow: 0 0 10px rgba(0, 0, 0, 0.15); padding:10px">Iframe goes here</iframe>
@@ -419,10 +420,10 @@
 
 	    <aside class="notes">
 
-	      <h2>Hola mundo</h2>
+	      <h2>Ola mundo</h2>
 
 	      <pre style="width:20em; height:10em; overflow:scroll">
-El patrón de diseño **Adapter** (Adaptador) se utiliza para transformar una interfaz en otra, de tal modo que una **clase** que no pudiera utilizar la primera, haga uso de ella a través de la segunda.
+O patrón de deseño **Adapter** (Adaptador) se utiliza para transformar una interfaz en otra, de tal modo que una **clase** que no pudiera utilizar la primera, haga uso de ella a través de la segunda.
 
 Propósito
 ==========
@@ -665,22 +666,24 @@ Enlaces externos
 	    </aside>
 	  </section>
 
+	  -->
+
 	  <section>
-	    <h2>Desarrollo</h2>
+	    <h2>Desenvolvemento</h2>
 
 	    <div style="column-count: 2;column-rule: 2em solid black;-moz-column-count: 2;-moz-column-rule: 0.2em solid grey;-webkit-column-count: 2;-webkit-column-rule: 2em solid black;">
 	      <div style="display:inline-block">
 		<h3>Framework</h3>
-		<p class="fragment highlight-current-bold">Persistencia y distribución</p>
+		<p class="fragment highlight-current-bold">Persistencia e distribución</p>
 		<p class="fragment highlight-current-bold">Búsqueda por título</p>
-		<p class="fragment highlight-current-bold">Firmas digitales</p>
+		<p class="fragment highlight-current-bold">Firmas dixitais</p>
 	      </div>
 
 	      <div style="display:inline-block">
 		<h3>Wiki</h3>
 		<p class="fragment highlight-current-bold">UX/UI</p>
-		<p class="fragment highlight-current-bold">Plantillas para presentar la información</p>
-		<p class="fragment highlight-current-bold">Páginas de desambiguación/búsqueda automáticas</p>
+		<p class="fragment highlight-current-bold">Plantillas para presentar a información</p>
+		<p class="fragment highlight-current-bold">Páxinas de desambiguación/búsqueda automáticas</p>
 	      </div>
 	    </div>
 
@@ -688,25 +691,25 @@ Enlaces externos
 	</section>
 
 	<section>
-	  <h2>¿Qué hemos conseguido?</h2>
-	  <p class="fragment highlight-current-bold">Contenido actualizable</p>
-	  <p class="fragment highlight-current-bold">Múltiples versiones</p>
-	  <p class="fragment highlight-current-bold">Integridad en cada versión</p>
-	  <p class="fragment highlight-current-bold">Distribución de contenido</p>
-	  <p class="fragment highlight-current-bold">Comunicaciones P2P</p>
+	  <h2>Que conseguimos?</h2>
+	  <p class="fragment highlight-current-bold">Contido actualizable</p>
+	  <p class="fragment highlight-current-bold">Múltiples versións</p>
+	  <p class="fragment highlight-current-bold">Integridade en cada versión</p>
+	  <p class="fragment highlight-current-bold">Distribución de contido</p>
+	  <p class="fragment highlight-current-bold">Comunicacións P2P</p>
 	</section>
 
 	<section>
 	  <h2>Licencias</h2>
-	  <p>El código es Sofware Libre, ver LICENSE dentro del repositorio.</p>
+	  <p>O código é Sofware Libre, ver LICENSE dentro do repositorio.</p>
 	  <hr />
-	  <p>Código JavaScript disponible en <a href="https://bitbucket.org/ssaavedra/soup-rest">bitbucket/ssaavedra/soup-rest</a></p>
-	  <p>Wikita disponible en <a href="https://bitbucket.org/ssaavedra/soup-wiki-app">bitbucket/ssaavedra/soup-wiki-app</a></p>
-	  <p>Memoria del Proyecto licenciada bajo CC-BY-SA y GFDL</p>
-	  <p>Presentación bajo CC-BY-SA 4.0 International</p>
+	  <p>Código JavaScript dispoñible en <a href="https://bitbucket.org/ssaavedra/soup-rest">bitbucket/ssaavedra/soup-rest</a></p>
+	  <p>Wikita dispoñible en <a href="https://bitbucket.org/ssaavedra/soup-wiki-app">bitbucket/ssaavedra/soup-wiki-app</a></p>
+	  <p>Memoria do Proxecto de Fin de Carreira licenciada bajo CC-BY-SA y GFDL</p>
+	  <p>Presentación baixo CC-BY-SA 4.0 International</p>
 
 	  <hr />
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />Este obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />Este obra está baixo unha <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">licencia de Creative Commons Recoñecemento-CompartirIgual 4.0 Internacional</a>.
 
 	</section>
 
@@ -715,10 +718,10 @@ Enlaces externos
 	  <h5>Facultade de Informática &bull; Departamento de Computación</h5>
 	  <h4>Proxecto de Fin de Carreira de Enxeñería Informática</h4>
 
-	  <h2>Almacenamiento Distribuido y Confiable sobre Pares no Confiables</h2>
+	  <h2>Almacenamento Distribuido e Confiable sobre Pares non Confiables</h2>
 	  <h4 class="authors">Alumno: Santiago Saavedra López</h4>
 	  <h5 class="authors">Directora: Laura M. Castro Souto</h5>
-	  <div>18 de septiembre de 2014</div>
+	  <div>17 de outubro de 2014</div>
 	</section>
 
       </div>
